@@ -1,0 +1,22 @@
+.header{
+    background: var(--gray-800);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1.30rem 0;
+}
+
+.header p{
+    display: flex;
+    height: 2.3rem;
+    align-items: center;
+}
+
+.titulo{
+    font-family: 'Inter';
+    margin-right: ;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+}
