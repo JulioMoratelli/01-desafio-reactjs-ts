@@ -1,22 +1,27 @@
 .header{
-    background: var(--gray-800);
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding: 1.30rem 0;
+    position: absolute;
+    height: 200px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    background-color: var(--gray-700);
 }
 
 .header p{
-    display: flex;
-    height: 2.3rem;
-    align-items: center;
-}
-
-.titulo{
+    position: absolute;
+    width: 135px;
+    height: 48px;
+    left: calc(50% - 92px/2 + 17px);
+    top: 72px;
+    
     font-family: 'Inter';
-    margin-right: ;
     font-style: normal;
     font-weight: 900;
     font-size: 40px;
     line-height: 48px;
+    color: var(--blue);
+
+    background: linear-gradient(to right, var(--blue) 60%, var(--purple-dark) 0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
