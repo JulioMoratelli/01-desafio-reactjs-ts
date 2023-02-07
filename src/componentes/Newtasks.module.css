@@ -23,7 +23,7 @@
     height: 54px;
 
     background: var(--gray-500);
-    color: var(--gray-300);
+    color: var(--gray-100);
 
     border: 1px solid var(--gray-700);
     border-radius: 8px;
@@ -33,26 +33,31 @@
     flex-grow: 1;
 }
 
+input::placeholder{
+    color: var(--gray-300);
+}
+
 .addtasks{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     gap: 8px;
-    width: 90px;
+    width: 95px;
     height: 52px;
-
     background: var(--blue-dark);
     border: 1px solid var(--gray-700);
     border-radius: 8px ;
-
     flex: none;
     order: 1;
     flex-grow: 0;
+
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     color: var(--gray-100);
+    font-size: 14px;
+    line-height: 140%;
 }
