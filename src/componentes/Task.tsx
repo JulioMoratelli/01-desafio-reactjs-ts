@@ -9,7 +9,7 @@ export function Tasks(){
         <div className={styles.alltasks}>
             <div className={styles.tasks}>
                 <input type="checkbox" />
-                <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                <label>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
                 <button title='Deletar comentario'><Trash size={25} /></button>
             </div>
         </div>

@@ -60,4 +60,8 @@ input::placeholder{
     color: var(--gray-100);
     font-size: 14px;
     line-height: 140%;
+    transition: 0.2s;
+}
+.addtasks:hover{
+    background-color: var(--blue);
 }
