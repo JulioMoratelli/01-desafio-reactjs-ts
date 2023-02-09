@@ -9,7 +9,7 @@ export function ListTasks(){
             <article>
                 <div className={styles.counter}>
                     <p>Tarefas Criadas<span>0</span></p>
-                    <p className={styles.p2}>Concluídas<span>0</span></p>
+                    <p className={styles.p2}>Concluídas<span>3 de 5</span></p>
                 </div>
             </article>
             <footer>

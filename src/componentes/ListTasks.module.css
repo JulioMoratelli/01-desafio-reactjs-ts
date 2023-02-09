@@ -18,9 +18,8 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 0px;
-    gap: 430px;
     
-    width: 765px;
+    width: 736px;
     height: 19px;
     
     flex: none;
@@ -38,7 +37,7 @@
     order: 0;
 
 
-    width: 143px;
+
     height: 19px;
     font-family: 'Inter';
     font-style: normal;
@@ -52,17 +51,24 @@
 }
 
 .counter p span{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2px 8px;
-
-    width: 25px;
-    height: 22px;
+    gap: 10px;
+    height: 19px;
 
     background: var(--gray-400);
-    color: var(--gray-100);
+    
     border-radius: 999px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--gray-100);
 }
 
 

@@ -1,17 +1,16 @@
 .alltasks{
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    border-radius: 8px;
     padding: 1rem;
     background-color: var(--gray-400);
 }
 
 .tasks{
-    
+    gap: 12px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .tasks input{
-    display: block;
     width: 24px;
     height: 24px;
 
@@ -21,7 +20,6 @@
 }
 
 .tasks p{
-    display: block;
 
     font-family: 'Inter';
     font-style: normal;
@@ -44,7 +42,15 @@
     order: 2;
     flex-grow: 0;
 }
+.tasks button:hover{
+    background-color: var(--gray-400);
+}
 
 .tasks button svg{
     color: var(--gray-300);
+    transition: 0.5s;
+}
+
+.tasks button svg:hover{  
+    color: var(--danger);
 }
