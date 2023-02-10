@@ -127,3 +127,14 @@
 .duties p p{
     font-weight: 300;
 }
+
+@media (max-width: 768px) {
+    .tasks{
+        justify-content: center;
+        width: 195%;
+        gap: 4px;
+        left: 5px;
+        top: 27%;
+        height: 20%;
+    }
+}
