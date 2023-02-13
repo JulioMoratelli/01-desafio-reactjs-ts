@@ -6,10 +6,10 @@
     gap: 24px;
 
     position: absolute;
-    width: 736px;
-    height: 287px;
+    width: 737px;
+    height: 351px;
     left: calc(50% - 736px/2);
-    top: 288px;
+    margin-top: 30px;
 }
 
 .counter{
@@ -88,7 +88,7 @@
 .duties{
     box-sizing: border-box;
 
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -103,8 +103,8 @@
 
     flex: none;
     order: 1;
-    align-self: stretch;
-    flex-grow: 0;
+    
+    flex-grow: 0;align-self: stretch;
 }
 
 .duties p{
@@ -131,10 +131,16 @@
 @media (max-width: 768px) {
     .tasks{
         justify-content: center;
-        width: 195%;
-        gap: 4px;
+        margin-top: 60px;
+        gap: 0px;
         left: 5px;
-        top: 27%;
-        height: 20%;
+        margin-top: 400px;
     }
+    .counter{
+        width: 134%;
+    }
+    .duties{
+        width: 105%;
+    }
+
 }

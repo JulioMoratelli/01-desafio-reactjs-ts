@@ -61,7 +61,6 @@
     .alltasks{
         justify-content: center;
         width: 50%;
-        gap: 4px;
-        height: ;        
+        gap: 4px;       
     }
 }
