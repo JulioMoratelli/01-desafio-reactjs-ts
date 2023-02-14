@@ -15,10 +15,10 @@ export function ListTasks(){
             <footer>
                 <div className={styles.duties}>
                     <ClipboardText size={84} /> 
-                    <p>Você ainda não tem tarefas cadastradas<p>Crie tarefas e organize seus itens a fazer</p></p>               
+                    <p>Você ainda não tem tarefas cadastradas <p>Crie tarefas e organize seus itens a fazer</p></p>               
                 </div>
             </footer>
-            <Tasks />
+          <Tasks/>
         </div>
     )
 }

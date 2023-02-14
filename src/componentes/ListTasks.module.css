@@ -88,7 +88,7 @@
 .duties{
     box-sizing: border-box;
 
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
