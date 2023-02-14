@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ListTasks.module.css'
 import { ClipboardText } from 'phosphor-react';
 import { Tasks } from './Task';
 
 export function ListTasks(){
+    const [tasks, setTasks] = useState([
+        'NEW TASK'
+    ])  
+
     return(
         <div className={styles.tasks}>
             <article>
@@ -18,7 +22,14 @@ export function ListTasks(){
                     <p>Você ainda não tem tarefas cadastradas <p>Crie tarefas e organize seus itens a fazer</p></p>               
                 </div>
             </footer>
-          <Tasks/>
+                <div>
+                    {tasks.map(task =>{
+                        return(
+                            <Tasks key={task} content={task}/>      
+                            )}
+                        )
+                    }
+                </div>
         </div>
     )
 }
