@@ -4,25 +4,45 @@ import { PlusCircle } from 'phosphor-react';
 import { Tasks } from './Task';
 import { ChangeEvent } from 'react';
 import { set } from 'date-fns';
+import { ListTasks } from './ListTasks';
 
-export function Newtasks(){
-    const [task, setTask] = useState('bla')
+interface Taskss{
+    tasks: string;
+    setTasks: (tasks: string[]) => void;
+} 
+
+
+export function Newtasks({tasks, setTasks}: Taskss){
+    
 
     const [newTasksText, setTasksText] = useState('')
     
-    const handleNewTasks = (event : ChangeEvent<HTMLInputElement>) =>{
-        setTask(event.target.value);
-    }
 
     function handleCreateNewTask(event: FormEvent){
-        event.preventDefault()
+        event.preventDefault()                
+        setTasks([...tasks, newTasksText]) 
+        setTasksText('')   
     }
     
+    const handleNewTasks = (event : ChangeEvent<HTMLInputElement>) =>{
+        
+        setTasksText(event.target.value); 
+            
+    }
+
+
 
     return(
         <form onSubmit={handleCreateNewTask}>
             <div className={styles.newtask}>
-                <input type="text" className={styles.input} onChange={handleNewTasks} placeholder="Adicione uma nova tarefa" />
+                <input 
+                    type="text" 
+                    className={styles.input} 
+                    value={newTasksText}
+                    onChange={handleNewTasks} 
+                    required
+                    placeholder="Adicione uma nova tarefa" 
+                />
                 <button className={styles.addtasks}>Criar<PlusCircle size={32}/></button>
             </div>
         </form>

@@ -1,8 +1,12 @@
 .alltasks{
     display: flex;
     border-radius: 8px;
+    margin-top: 10px;
     padding: 1rem;
+    width: 736px;
     background-color: var(--gray-400);
+    justify-content: space-between;
+    word-wrap: break-word;
 }
 
 .tasks{
@@ -28,6 +32,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
+    width: 632px;
     line-height: 140%;
 
     color: var(--gray-100);

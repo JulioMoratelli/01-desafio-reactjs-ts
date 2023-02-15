@@ -4,13 +4,16 @@ import { ClipboardText } from 'phosphor-react';
 import { Tasks } from './Task';
 import { Newtasks } from './Newtasks';
 
-export function ListTasks(){
-    const [tasks, setTasks] = useState([
-        'NEW TASK'
-    ])  
+interface Taskss{
+    tasks: string[];
+} 
 
+export function ListTasks({tasks}: Taskss){
+    
     return(
         <div className={styles.tasks}>
+
+            <div>
             <article>
                 <div className={styles.counter}>
                     <p>Tarefas Criadas<span>0</span></p>
@@ -23,6 +26,7 @@ export function ListTasks(){
                     <p>Você ainda não tem tarefas cadastradas <p>Crie tarefas e organize seus itens a fazer</p></p>               
                 </div>
             </footer>
+            </div>
                 <div>
                     {tasks.map(task =>{
                         return(

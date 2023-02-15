@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './App.module.css'
 import { Header } from './componentes/Header';
 import { Newtasks } from './componentes/Newtasks';
@@ -8,14 +8,17 @@ import './global.css'
 
 
 export function App(){
+    const [tasks, setTasks] = useState([])
+
+
     return(
     <div>
         <Header />
 
         <div className={styles.wrapper}>
-           <Newtasks />
+           <Newtasks tasks={tasks} setTasks={setTasks}/>
 
-           <ListTasks />
+           <ListTasks tasks={tasks} />
         </div>
     </div>
     )
