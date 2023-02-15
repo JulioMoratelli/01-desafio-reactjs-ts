@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './ListTasks.module.css'
 import { ClipboardText } from 'phosphor-react';
 import { Tasks } from './Task';
+import { Newtasks } from './Newtasks';
 
 export function ListTasks(){
     const [tasks, setTasks] = useState([
@@ -29,7 +30,7 @@ export function ListTasks(){
                             )}
                         )
                     }
-                </div>
+                </div> 
         </div>
     )
 }

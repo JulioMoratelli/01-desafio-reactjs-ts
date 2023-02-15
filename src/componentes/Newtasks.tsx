@@ -16,10 +16,8 @@ export function Newtasks(){
 
     function handleCreateNewTask(event: FormEvent){
         event.preventDefault()
-
-        setTask([...task, task.length + 1])
-        setTasksText('')
     }
+    
 
     return(
         <form onSubmit={handleCreateNewTask}>

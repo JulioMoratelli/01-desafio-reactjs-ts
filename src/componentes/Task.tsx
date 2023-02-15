@@ -2,6 +2,7 @@ import { Trash } from "phosphor-react";
 import React from "react";
 import styles from './Task.module.css'
 
+
 interface TasksProps{
     content: string;
 }
