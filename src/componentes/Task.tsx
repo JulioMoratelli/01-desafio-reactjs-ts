@@ -6,12 +6,12 @@ import styles from './Task.module.css'
 interface TasksProps{
     content: string;
     taskIsChecked: boolean;
-    setTaskIsChecked: (taskIsChecked: boolean) => void;
+    setTaskIsChecked:  React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export function Tasks({content, taskIsChecked, setTaskIsChecked}: TasksProps){
     function handleIsChecked(event: ChangeEvent<HTMLInputElement>){
-        setTaskIsChecked(event.target.value)
+        setTaskIsChecked(event.target.checked)
     }
 
 
@@ -21,6 +21,7 @@ export function Tasks({content, taskIsChecked, setTaskIsChecked}: TasksProps){
                 <input 
                     type="checkbox" 
                     onChange={handleIsChecked}
+                    checked={taskIsChecked}
                 />
                 <label>{content}</label>
                 <button title='Deletar comentario'><Trash size={25} /></button>
