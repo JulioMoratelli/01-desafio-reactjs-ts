@@ -22,31 +22,39 @@ export function ListTasks({tasks}: Taskss){
                         <p className={styles.p2}>Concluídas<span>{checkedCounter} de {tasks.length}</span></p>
                     </div>
                 </article>
-                <footer>
-                    <div className={styles.duties}>
-                        <ClipboardText size={84} /> 
-                        <p>Você ainda não tem tarefas cadastradas <p>Crie tarefas e organize seus itens a fazer</p></p>               
-                    </div>
-                </footer>
+
+
+                {checkedCounter >= 1 ? (
+                    <div>
+                        {tasks.map((task, index) => {
+                            return (
+                                <Tasks 
+                                    key={task} 
+                                    content={task} 
+                                    taskIsChecked={taskIsChecked[index]}
+                                    setTaskIsChecked={(isChecked) => {
+                                        setTaskIsChecked(predication => {
+                                            const novoEstado = [...predication];
+                                            novoEstado[index] = isChecked;
+                                            return novoEstado;
+                                        });
+                                    }}
+                                />      
+                            )
+                        })}
+                    </div> 
+                ) : (
+                    <footer>
+                        <div className={styles.duties}>
+                            <ClipboardText size={84} /> 
+                            <p>Você ainda não tem tarefas cadastradas <p>Crie tarefas e organize seus itens a fazer</p></p>               
+                        </div>
+                    </footer>
+                )}
+
+                
             </div>
-            <div>
-                {tasks.map((task, index) => {
-                    return (
-                        <Tasks 
-                            key={task} 
-                            content={task} 
-                            taskIsChecked={taskIsChecked[index]}
-                            setTaskIsChecked={(isChecked) => {
-                                setTaskIsChecked(predication => {
-                                    const novoEstado = [...predication];
-                                    novoEstado[index] = isChecked;
-                                    return novoEstado;
-                                });
-                            }}
-                        />      
-                    )
-                })}
-            </div> 
+            
         </div>
     );
 }
