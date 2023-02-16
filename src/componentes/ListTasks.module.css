@@ -9,7 +9,7 @@
     width: 737px;
     height: 351px;
     left: calc(50% - 736px/2);
-    margin-top: 30px;
+    margin-top: 33px;
 }
 
 .counter{
@@ -92,6 +92,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 8px;
     padding: 64px 24px;
     gap: 16px;
 

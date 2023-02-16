@@ -9,6 +9,7 @@ interface Taskss{
 } 
 
 export function ListTasks({tasks}: Taskss){
+    const [taskIsChecked, setTaskIsChecked] = useState(false)
     
     return(
         <div className={styles.tasks}>
@@ -16,8 +17,8 @@ export function ListTasks({tasks}: Taskss){
             <div>
             <article>
                 <div className={styles.counter}>
-                    <p>Tarefas Criadas<span>0</span></p>
-                    <p className={styles.p2}>Concluídas<span>3 de 5</span></p>
+                    <p>Tarefas Criadas<span>{tasks.length}</span></p>
+                    <p className={styles.p2}>Concluídas<span>{taskIsChecked} de {tasks.length}</span></p>
                 </div>
             </article>
             <footer>
@@ -30,7 +31,12 @@ export function ListTasks({tasks}: Taskss){
                 <div>
                     {tasks.map(task =>{
                         return(
-                            <Tasks key={task} content={task}/>      
+                            <Tasks 
+                                key={task} 
+                                content={task} 
+                                taskIsChecked={taskIsChecked}
+                                setTaskIsChecked={setTaskIsChecked}
+                            />      
                             )}
                         )
                     }
