@@ -15,6 +15,8 @@ export function ListTasks({tasks, deleteTask}: Taskss){
     const [taskIsChecked, setTaskIsChecked] = useState(new Array(tasks.length).fill(false));
 
     const checkedCounter = taskIsChecked.reduce((quantidade, valor) => quantidade + (valor ? 1 : 0), 0);
+    console.log(tasks)
+
 
     return (
         <div className={styles.tasks}>
@@ -48,17 +50,16 @@ export function ListTasks({tasks, deleteTask}: Taskss){
                         })}
                     </div> 
                 ) : (
-                    <footer>
-                        <div className={styles.duties}>
-                            <ClipboardText size={84} /> 
-                            <p>Você ainda não tem tarefas cadastradas <p>Crie tarefas e organize seus itens a fazer</p></p>               
-                        </div>
-                    </footer>
-                )}
-
-                
+                        <footer>
+                            <div className={styles.duties}>
+                                <ClipboardText size={84} /> 
+                                <p>Você ainda não tem tarefas cadastradas <p>Crie tarefas e organize seus itens a fazer</p></p>               
+                            </div>
+                        </footer>
+                    )}                
             </div>
             
         </div>
     );
 }
+

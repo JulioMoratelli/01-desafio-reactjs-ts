@@ -10,6 +10,7 @@ import './global.css'
 export function App(){
     const [tasks, setTasks] = useState([])
 
+    
     function deleteTask(tasksToDelete: string){
         const updatingCommentDelete = tasks.filter(task =>{
             return(
