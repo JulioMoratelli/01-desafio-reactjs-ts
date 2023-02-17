@@ -7,11 +7,16 @@ interface TasksProps{
     content: string;
     taskIsChecked: boolean;
     setTaskIsChecked:  React.Dispatch<React.SetStateAction<boolean>>;
+    deleteTask: (content: string) => void
 }
 
-export function Tasks({content, taskIsChecked, setTaskIsChecked}: TasksProps){
+export function Tasks({content, taskIsChecked, setTaskIsChecked, deleteTask}: TasksProps){
     function handleIsChecked(event: ChangeEvent<HTMLInputElement>){
         setTaskIsChecked(event.target.checked)
+    }
+
+    function handleDeleteTasks(){
+        deleteTask(content)
     }
 
 
@@ -24,7 +29,7 @@ export function Tasks({content, taskIsChecked, setTaskIsChecked}: TasksProps){
                     checked={taskIsChecked}
                 />
                 <label>{content}</label>
-                <button title='Deletar comentario'><Trash size={25} /></button>
+                <button onClick={handleDeleteTasks} title='Deletar comentario'><Trash size={25} /></button>
             </div>
         </div>
     )

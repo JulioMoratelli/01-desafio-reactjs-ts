@@ -10,15 +10,32 @@ import './global.css'
 export function App(){
     const [tasks, setTasks] = useState([])
 
+    function deleteTask(tasksToDelete: string){
+        const updatingCommentDelete = tasks.filter(task =>{
+            return(
+                task !== tasksToDelete
+            )
+        })
+        
+        setTasks(updatingCommentDelete)
+    }
+
+
 
     return(
     <div>
         <Header />
 
         <div className={styles.wrapper}>
-           <Newtasks tasks={tasks} setTasks={setTasks}/>
+            <Newtasks 
+                tasks={tasks} 
+                setTasks={setTasks}
+            />
 
-           <ListTasks tasks={tasks} />
+            <ListTasks 
+                tasks={tasks}  
+                deleteTask={deleteTask}
+            />
         </div>
     </div>
     )

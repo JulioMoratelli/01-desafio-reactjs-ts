@@ -7,7 +7,7 @@ import { set } from 'date-fns';
 import { ListTasks } from './ListTasks';
 
 interface Taskss{
-    tasks: string;
+    tasks: string[];
     setTasks: (tasks: string[]) => void;
 } 
 
