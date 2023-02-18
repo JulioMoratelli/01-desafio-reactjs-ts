@@ -18,12 +18,12 @@ export function Tasks({content, taskIsChecked, setTaskIsChecked, deleteTask}: Ta
     function handleDeleteTasks(){
         deleteTask(content)
     }
-
+    
 
     return(
         <div className={styles.alltasks}>
             <div className={styles.tasks}>
-                <input 
+            <input 
                     type="checkbox" 
                     onChange={handleIsChecked}
                     checked={taskIsChecked}

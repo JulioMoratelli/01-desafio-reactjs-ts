@@ -63,9 +63,17 @@
 
 
 @media (max-width: 768px) {
-    .alltasks{
-        justify-content: center;
-        width: 50%;
+    .alltasks{ 
+        width: 105%;
         gap: 4px;       
+    }
+
+    .tasks{
+        word-wrap: break-word;
+    }
+
+    .tasks label{
+
+        width: 255px;
     }
 }

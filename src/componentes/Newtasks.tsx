@@ -24,7 +24,6 @@ export function Newtasks({tasks, setTasks}: Taskss){
         //dentro do array e vai atribuir cada array a um "T" que sera usado como parametro para identificar se tem algum array(t) que é igual
         // ao "newTaskText", se tiver algum igual ele vai retornar true se for diferente ele vai retorna false.
         const achou = tasks.find((t) => t == newTasksText)
-        console.log(achou)
         // no if se "achou" for igual a verdadeiro ele retorna true e cai em uma condição que vai retorar um alerta dizendo
         // que essa tarefa ja existe.
         // e o else vai vai adicionar uma nosta task caso ja não tenha uma igual repetida.

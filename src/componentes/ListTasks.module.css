@@ -131,14 +131,14 @@
 
 @media (max-width: 768px) {
     .tasks{
-        justify-content: center;
         margin-top: 60px;
         gap: 0px;
         left: 5px;
+        width: 97.5%;
         margin-top: 400px;
     }
     .counter{
-        width: 134%;
+        width: 105%;
     }
     .duties{
         width: 105%;
