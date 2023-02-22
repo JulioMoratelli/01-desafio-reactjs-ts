@@ -1,10 +1,9 @@
 import styles from './Newtasks.module.css'
 import React, {FormEvent, useState } from 'react';
 import { PlusCircle } from 'phosphor-react';
-import { Tasks } from './Task';
 import { ChangeEvent } from 'react';
-import { ListTasks } from './ListTasks';
-import { lastDayOfQuarterWithOptions } from 'date-fns/fp';
+import Alerts from './Alert';
+
 
 interface Taskss{
     tasks: string[];
@@ -18,8 +17,7 @@ export function Newtasks({tasks, setTasks}: Taskss){
     const [newTasksText, setTasksText] = useState('')
 
     function handleCreateNewTask(event: FormEvent){
-        event.preventDefault() 
-        
+        event.preventDefault()        
         //nessa condição abaixo crei um const "achou" que vai receber tasks.find, find é utilizado para identificar quais são os arrays
         //dentro do array e vai atribuir cada array a um "T" que sera usado como parametro para identificar se tem algum array(t) que é igual
         // ao "newTaskText", se tiver algum igual ele vai retornar true se for diferente ele vai retorna false.
@@ -27,10 +25,14 @@ export function Newtasks({tasks, setTasks}: Taskss){
         // no if se "achou" for igual a verdadeiro ele retorna true e cai em uma condição que vai retorar um alerta dizendo
         // que essa tarefa ja existe.
         // e o else vai vai adicionar uma nosta task caso ja não tenha uma igual repetida.
-        if (achou) {
-            alert('Essa tarefa ja existe, crie uma diferente')
+        if (achou) {      
+            return(
+                <Alerts/>
+            )
         } else if (newTasksText == ''){
-            alert('Por favor digite algo')
+            return(
+                <Alerts/>
+            )
         } else{
             setTasks([...tasks, newTasksText])
             setTasksText('')          
