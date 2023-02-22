@@ -2,7 +2,6 @@ import styles from './Newtasks.module.css'
 import React, {FormEvent, useState } from 'react';
 import { PlusCircle } from 'phosphor-react';
 import { ChangeEvent } from 'react';
-import Alerts from './Alert';
 
 
 interface Taskss{
@@ -27,11 +26,11 @@ export function Newtasks({tasks, setTasks}: Taskss){
         // e o else vai vai adicionar uma nosta task caso ja não tenha uma igual repetida.
         if (achou) {      
             return(
-                <Alerts/>
+                alert('Essa tarefa ja existe')
             )
         } else if (newTasksText == ''){
             return(
-                <Alerts/>
+                alert('Por favor preencha o campo corretamente')
             )
         } else{
             setTasks([...tasks, newTasksText])

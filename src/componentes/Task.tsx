@@ -1,7 +1,10 @@
 import { Trash } from "phosphor-react";
 import React, { ChangeEvent } from "react";
 import styles from './Task.module.css'
+import Checkbox from '@mui/material/Checkbox';
 
+
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 interface TasksProps{
     content: string;
@@ -23,7 +26,7 @@ export function Tasks({content, taskIsChecked, setTaskIsChecked, deleteTask}: Ta
     return(
         <div className={styles.alltasks}>
             <div className={styles.tasks}>
-            <input 
+                <input 
                     type="checkbox" 
                     onChange={handleIsChecked}
                     checked={taskIsChecked}
