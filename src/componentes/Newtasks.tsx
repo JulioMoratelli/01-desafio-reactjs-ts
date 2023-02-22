@@ -28,7 +28,7 @@ export function Newtasks({tasks, setTasks}: Taskss){
             return(
                 alert('Essa tarefa ja existe')
             )
-        } else if (newTasksText == ''){
+        } else if (newTasksText === ''){
             return(
                 alert('Por favor preencha o campo corretamente')
             )

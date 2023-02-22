@@ -8,7 +8,7 @@ import './global.css'
 
 
 export function App(){
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState<string[]>([])
 
     
     function deleteTask(tasksToDelete: string){
