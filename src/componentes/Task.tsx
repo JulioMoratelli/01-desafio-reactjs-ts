@@ -9,13 +9,14 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 interface TasksProps{
     content: string;
     taskIsChecked: boolean;
-    setTaskIsChecked:  React.Dispatch<React.SetStateAction<boolean>>;
+    setTaskIsChecked: (content: boolean) => void;
     deleteTask: (content: string) => void
 }
 
 export function Tasks({content, taskIsChecked, setTaskIsChecked, deleteTask}: TasksProps){
     function handleIsChecked(event: ChangeEvent<HTMLInputElement>){
         setTaskIsChecked(event.target.checked)
+        // console.log("sadadasda", event.target.checked)
     }
 
     function handleDeleteTasks(){

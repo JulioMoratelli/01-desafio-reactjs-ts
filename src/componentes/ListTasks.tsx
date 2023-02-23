@@ -3,19 +3,20 @@ import styles from './ListTasks.module.css'
 import { ClipboardText } from 'phosphor-react';
 import { Tasks } from './Task';
 import { Newtasks } from './Newtasks';
+import { Task } from '../App' // interface
 
 interface Taskss{
-    tasks: string[];
+    tasks: Task[];
+    setTasks: (tasks: Task[]) => void;
     deleteTask: (tasks: string) => void
-} 
+}
 
+export function ListTasks({tasks, setTasks, deleteTask}: Taskss){
+    // const [taskIsChecked, setTaskIsChecked] = useState(new Array(tasks.length).fill(false));
 
+    // const checkedCounter = taskIsChecked.reduce((quantidade, valor) => quantidade + (valor ? 1 : 0), 0);
 
-export function ListTasks({tasks, deleteTask}: Taskss){
-    const [taskIsChecked, setTaskIsChecked] = useState(new Array(tasks.length).fill(false));
-
-    const checkedCounter = taskIsChecked.reduce((quantidade, valor) => quantidade + (valor ? 1 : 0), 0);
-    console.log(tasks)
+    // console.log(tasks)
 
 
     return (
@@ -24,7 +25,7 @@ export function ListTasks({tasks, deleteTask}: Taskss){
                 <article>
                     <div className={styles.counter}>
                         <p>Tarefas Criadas<span>{tasks.length}</span></p>
-                        <p className={styles.p2}>Concluídas<span>{checkedCounter} de {tasks.length}</span></p>
+                        <p className={styles.p2}>Concluídas<span>{tasks.filter(t=>t.checked).length} de {tasks.length}</span></p>
                     </div>
                 </article>
 
@@ -34,16 +35,12 @@ export function ListTasks({tasks, deleteTask}: Taskss){
                         {tasks.map((task, index) => {
                             return (
                                 <Tasks 
-                                    key={task} 
-                                    content={task} 
+                                    key={task.text} 
+                                    content={task.text} 
                                     deleteTask={deleteTask}
-                                    taskIsChecked={taskIsChecked[index]}
+                                    taskIsChecked={task.checked}
                                     setTaskIsChecked={(isChecked) => {
-                                        setTaskIsChecked(predication => {
-                                            const novoEstado = [...predication];
-                                            novoEstado[index] = isChecked;
-                                            return novoEstado;
-                                        });
+                                        setTasks(tasks.map(t=> task.text === t.text ? {...t, checked: isChecked} : t ));
                                     }}
                                 />      
                             )
